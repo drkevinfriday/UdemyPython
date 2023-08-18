@@ -47,7 +47,7 @@ while selection != "7":
 
     
     
-    print("Your computer contains:" + computer_parts)
+    print(f"Your computer contains: {computer_parts}")
         
 else:
     print("This is a list of the computer_parts you chosen: " )
