@@ -28,17 +28,27 @@ while selection != "7":
         print("{}:\t{}\n".format(number + 1,option))
 # Get the selection input from the user
     selection = (input("Enter your selection here:  "))
+    print(selection)
+    print(options[int(selection) - 1])
 
 # this example shows how to write the code using the (in) operator
     if selection == "7":
         print("This is a list of the computer_parts you chosen: " )
         print(computer_parts)
+    
         break
-    if selection in valid_choices:
+    elif options[int(selection) - 1] in computer_parts:
+            # the selection is already in the list so the user wants it deleted
+        computer_parts.remove(options[int(selection)-1])
+        print("{} item removed".format(options[int(selection) - 1]))
+    elif selection in valid_choices:
         print("You choose to {}. We are adding it to your list".format(options[int(selection)-1]))
         computer_parts.append(options[int(selection) - 1])
 
-
+    
+    
+    print("Your computer contains:" + computer_parts)
+        
 else:
     print("This is a list of the computer_parts you chosen: " )
     print(computer_parts)
